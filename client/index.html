@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness-Rechner</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script type="application/javascript">
+        function bmi() {
+            // TODO: JSON über Node-Server an Fn weiterleiten
+            $.post("/bmi", {name: "Dennis"}, (data, status) => {
+                alert(data);
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="content">
+
+<header>
+</header>
+
+<main>
+    <h1>Body mass index</h1>
+    <table>
+        <tr>
+            <td>Körpergröße</td>
+            <td><input id="groesse"></td>
+            <td>cm</td>
+        </tr>
+        <tr>
+            <td>Gewicht</td>
+            <td><input id="gewicht"></td>
+            <td>kg</td>
+        </tr>
+        <tr>
+            <td>BMI</td>
+            <td id="bmi">NN</td>
+        </tr>
+        <tr>
+            <td><button id="bmi_berechnen" onclick=bmi()>Berechnen</button></td>
+        </tr>
+    </table>
+
+</main>
+
+</div>
+</body>
+</html>
